@@ -1,6 +1,7 @@
 var baseurl="http://192.168.1.68/eventapp/";
 angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives','eventapp.service'])
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .constant('baseurl', baseurl)
+	.config(function ($stateProvider, $urlRouterProvider) {
                  $stateProvider 
 				 .state('app', {
                 url: "/app",

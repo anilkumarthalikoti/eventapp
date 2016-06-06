@@ -12,13 +12,14 @@ angular.module("eventapp.controllers",[])
 
     })
 	 .controller('HomeCtrl', function($scope,fileUpload){
+	 $scope.baseurl=baseurl;
             $scope.uploadFile = function(){
                var file = $scope.myFile;
                
                console.log('file is ' );
               // console.dir(file);
                
-               var uploadUrl = "/fileUpload";
+               var uploadUrl = $scope.baseurl+"templates/fileupload.php";
                fileUpload.uploadFileToUrl(file, uploadUrl);
             }
 			
