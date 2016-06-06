@@ -1,4 +1,11 @@
 <?php 
+/*
+upload_max_filesize  = 256M
+post_max_size =257
+file_uploads = On
+max_execution_time = 300
+max_input_time = 300
+*/
 require "crossdomain.php";
  if(isset($_FILES['file'])){
       $errors= array();
