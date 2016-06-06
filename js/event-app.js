@@ -1,6 +1,35 @@
 var baseurl="http://192.168.1.68/eventapp/";
 angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives','eventapp.service'])
-    .constant('baseurl', baseurl)
+    .run(function ($ionicPlatform, $state) {
+    $ionicPlatform.registerBackButtonAction(function (event) {
+    if($state.current.name=="app.playlists"){
+     // navigator.app.exitApp();
+    }
+	else
+	 if($state.current.name=="app.login"){
+      navigator.app.exitApp();
+    }
+    else {
+      navigator.app.backHistory();
+    }
+  }, 100);
+
+
+    $ionicPlatform.ready(function () {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
+
+})
+	.constant('baseurl', baseurl)
+	
 	.config(function ($stateProvider, $urlRouterProvider) {
                  $stateProvider 
 				 .state('app', {
