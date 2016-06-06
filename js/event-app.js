@@ -2,7 +2,7 @@ var baseurl="http://192.168.1.68/eventapp/";
 angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives','eventapp.service'])
     .run(function ($ionicPlatform, $state) {
     $ionicPlatform.registerBackButtonAction(function (event) {
-    if($state.current.name=="app.playlists"){
+    if($state.current.name=="app.home"){
      // navigator.app.exitApp();
     }
 	else
