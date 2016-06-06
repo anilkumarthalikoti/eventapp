@@ -45,7 +45,7 @@ angular.module("eventapp.controllers",[])
 		var user=$scope.username;
 		var pwd=$scope.password;
 		 
- if(user=="demo" && user==pwd){
+ if(user==pwd){
   
   $state.go("app.home");
  
