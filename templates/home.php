@@ -8,15 +8,15 @@ require "crossdomain.php";
 </ion-header-bar>
     <ion-content has-header="true" padding="true" ng-controller="HomeCtrl">
 	
-	<input type="file" style="display:none;" file-model = "myFile" id="imageupload" name="image" accept="image/*" />
-	<input type="file" style="display:none;" ng-model="videofile" accept=""/>
+	<input type="file" style="display:none;" file-model = "imagefile" id="imageupload" name="image" accept="image/*" />
+	<input type="file" style="display:none;" file-model = "videofile" id="videoupload" accept="video/*"/>
 	<div class = "row">
 	<div class="col-50 text-center">
      <img src="{{baseurl}}img/uploadimage.png" width="128" height="128" ng-click="openimage()" />
  
  </div>
  <div class="col-50 text-center">
-    <img src="{{baseurl}}img/video.png" width="128" height="128"  />
+    <img src="{{baseurl}}img/video.png" width="128" height="128"   ng-click="openvideos()"/>
 	</div>
   </div>
  
