@@ -14,17 +14,24 @@ angular.module("eventapp.controllers",[])
 	 .controller('HomeCtrl', function($scope,fileUpload){
 	 $scope.baseurl=baseurl;
             $scope.uploadFile = function(){
-               var file = $scope.myFile;
-               
+               var imgfile = $scope.imagefile;
+               var videofile = $scope.videofile;
                console.log('file is ' );
               // console.dir(file);
                
                var uploadUrl = $scope.baseurl+"templates/fileupload.php";
-               fileUpload.uploadFileToUrl(file, uploadUrl);
+			       fileUpload.uploadFileToUrl(imgfile, uploadUrl,{});
+				   uploadUrl = $scope.baseurl+"templates/videoupload.php";
+				     fileUpload.uploadFileToUrl(videofile, uploadUrl,{});
             }
 			
 			$scope.openimage=function(){
 			document.getElementById("imageupload").click();
+			
+			}
+			
+			$scope.openvideos=function(){
+			document.getElementById("videoupload").click();
 			
 			}
          })
