@@ -12,16 +12,27 @@ require "crossdomain.php";
 	<input type="file" style="display:none;" file-model = "videofile" id="videoupload" accept="video/*"/>
 	<div class = "row">
 	<div class="col-50 text-center">
-     <img src="{{baseurl}}img/uploadimage.png" width="128" height="128" ng-click="openimage()" />
- 
+	<div class="icon ion-camera"  ng-click="openimage()" style="font-size:128px;"></div>
+	<!--
+     <img src="{{baseurl}}img/uploadimage.png" width="128" height="128" />
+ -->
  </div>
  <div class="col-50 text-center">
-    <img src="{{baseurl}}img/video.png" width="128" height="128"   ng-click="openvideos()"/>
+
+ <div class="icon ion-videocamera"  ng-click="openvideos()" style="font-size:128px;"></div>
+    
 	</div>
   </div>
- 
+ <div class = "row">
+	<div class="col-50 text-center">
+     <div style="width:100%; height:250px; border:1px solid #cccccc"></div>
+ </div>
+ <div class="col-50 text-center">
+   <div style="width:100%; height:250px; border:1px solid #cccccc; "></div>
+	</div>
+  </div>
   <div class = "row">
-  <div class="col-100">
+  <div class="col-100" style="height:25px; position:absolute; bottom:0px;">
 <button class="button button-large"  ng-click="uploadFile()">Upload</button>  </div>
 </div>
 	  </ion-content>

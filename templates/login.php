@@ -1,7 +1,8 @@
 <?php 
 require "crossdomain.php";
 ?>
-<ion-view title="Event Manager-NEw" hide-back-button="true"   hide-nav-bar="false">
+
+<ion-view title="LOGIN" hide-back-button="true"   hide-nav-bar="false">
 <ion-header-bar class="bar-positive">
    
   <h1 class="title">Login-New</h1>

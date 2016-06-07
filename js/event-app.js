@@ -47,6 +47,18 @@ angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives',
                     }
                 }
             })
+			
+			 .state('app.addbusiness', {
+                url: "/addbusiness",
+                views: {
+                    'menuContent': {
+                        templateUrl: baseurl+"templates/addbusiness.php",
+                        controller: "NewBusinessCtrl"
+                    }
+                }
+            })
+			
+			
            .state('app.login', {
                 url: "/login",
                 views: {

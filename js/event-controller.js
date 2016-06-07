@@ -54,7 +54,10 @@ angular.module("eventapp.controllers",[])
         };
 
     })
+ .controller('NewBusinessCtrl', function ($scope, $state) {
  
+ 
+ })
    ;
 
     

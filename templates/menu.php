@@ -11,11 +11,15 @@ require "crossdomain.php";
     </ion-pane>
 
     <ion-side-menu side="left">
-        <header class="bar bar-header bar-dark">
+        <header class="bar bar-header bar-positive">
             <h1 class="title">Event Manager</h1>
         </header>
         <ion-content class="has-header">
             <ion-list>
+			<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/addbusiness">
+                    <i class="icon ion-radio-waves"></i>
+                    New Business
+                </ion-item>
                 <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/person/me/feed">
                     <i class="icon ion-radio-waves"></i>
                     Package & Menu
@@ -45,3 +49,11 @@ require "crossdomain.php";
     </ion-side-menu>
 
 </ion-side-menus>
+<ion-footer-bar class="bar-positive">
+
+   
+   
+
+ 
+
+</ion-footer-bar>
