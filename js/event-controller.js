@@ -36,7 +36,7 @@ angular.module("eventapp.controllers",[])
 			}
          })
  .controller('HomeCtrl', function ($scope, $state) {})
-    .controller('LoginCtrl', function ($scope, $state) {
+    .controller('LoginCtrl', function ($scope, $state,$http) {
  $scope.username="";
  $scope.password="";
  
@@ -44,12 +44,25 @@ angular.module("eventapp.controllers",[])
         $scope.doLogin = function () {
 		var user=$scope.username;
 		var pwd=$scope.password;
-		 
- if(user==pwd){
+		 var params={};
+		 params["username"]=user;
+		 params["userpwd"]=pwd;
+		 params["service"]="validate";
+		 $http({
+  method: 'POST',
+  url: baseurl+"response/validation.php"
   
-  $state.go("app.home");
+}).then(function validLogin(response) {
+   if(response=="valid"){
+	$state.go("app.home");
+	}else{
+	alert("Invalid login");
+	}
+	
+  }, function errorCallback(response) {
+alert("Invalid credentals")
+  });
  
- }
            
         };
 
