@@ -55,12 +55,13 @@ angular.module("eventapp.controllers",[])
 
     })
  .controller('NewBusinessCtrl', function ($scope, $state) {
- var food={name:"Foods",items:["Veg","Non-Veg"]};
+ var food={name:"Foods",items:["Veg","Non-Veg","Gluten Food","Jain","Bar food"]};
  var drinks={name:"Drinks",items:["Drinks Allowed","Cock-Tail","Mock-Tail","Bar Area"]};
- var equipment={name:"Equipment",items:[]};
- var parking={name:"Parking",items:[]};
- var seating={name:"Seating",items:[]};
- $scope.groups = [food,drinks,equipment,parking,seating];
+ var equipment={name:"Equipment",items:["Generator","Projector","Wifi","Microphone","Sound System"]};
+ var parking={name:"Parking",items:["Valet Parking","Four Wheeler","Two Wheeler"]};
+ var seating={name:"Seating",items:["Classical Style","Theater Style","Confrence Style","U Shape","Open"]};
+  var facility={name:"Facilites",items:["Air Condition","Stage","Swimming pool","Wheel chair","Lift","Outside decorater","Havan","Plaintain Leaf Service"]};
+ $scope.groups = [food,drinks,equipment,parking,seating,facility];
  //$scope.headers=["Food","Drinks","Equipments","Parking","Seating"];
  /*
   for (var i=0; i<$scope.headers.length; i++) {
