@@ -1,4 +1,4 @@
-var baseurl="http://192.168.1.68/eventapp/";
+var baseurl="http://192.168.0.101:9090/eventapp/";
 angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives','eventapp.service'])
     .run(function ($ionicPlatform, $state) {
     $ionicPlatform.registerBackButtonAction(function (event) {
@@ -34,7 +34,8 @@ angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives',
     'self',
     // Allow loading from our assets domain.  Notice the difference between * and **.
     baseurl+"**",
-	  "http://192.168.1.68*"
+	  "http://192.168.1.68*",
+	    "http://192.168.0.100:3000/**"
   ]);
 
   // The blacklist overrides the whitelist so the open redirect here is blocked.

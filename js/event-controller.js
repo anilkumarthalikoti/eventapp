@@ -53,8 +53,8 @@ angular.module("eventapp.controllers",[])
 		 params["service"]="validate";
 		 $http({
   method: 'POST',
-  url: baseurl+"response/validation.php"
-  
+  url: baseurl+"response/validation.php",
+  data:params
 }).then(function validLogin(response) {
  
    if(response=="valid"){
