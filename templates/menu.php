@@ -20,7 +20,7 @@ require "crossdomain.php";
                     <i class="icon ion-radio-waves"></i>
                     New Business
                 </ion-item>
-                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/person/me/feed">
+                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/uploadtopackage">
                     <i class="icon ion-radio-waves"></i>
                     Package & Menu
                 </ion-item>

@@ -7,6 +7,7 @@ require "crossdomain.php";
  
 </ion-header-bar>
     <ion-content has-header="true" padding="true" ng-controller="NewBusinessCtrl" >
+ 
 	 <div class="list list-inset">
  
  
@@ -63,8 +64,28 @@ require "crossdomain.php";
     <input type="text" placeholder="Manager's Contact" name="managerContact" ng-model="managerContact">
   </label>
   <br/>
+  
   </div>
-	 
+<!-- Food Items-->
+ 
+   <ion-list>
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+           {{group.name}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)" >
+					<ion-checkbox  > {{item}}</ion-checkbox>
+           
+          </ion-item>
+        </div>
+      </ion-list>
+
 	  </ion-content>
 <ion-footer-bar class="bar-positive">
 
