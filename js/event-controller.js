@@ -35,7 +35,10 @@ angular.module("eventapp.controllers",[])
 			
 			}
          })
- .controller('HomeCtrl', function ($scope, $state) {})
+ .controller('HomeCtrl', function ($scope, $state) {
+ $scope.logged="";
+ 
+ })
     .controller('LoginCtrl', function ($scope, $state,$http) {
  $scope.username="";
  $scope.password="";
@@ -53,7 +56,9 @@ angular.module("eventapp.controllers",[])
   url: baseurl+"response/validation.php"
   
 }).then(function validLogin(response) {
+ 
    if(response=="valid"){
+   //Session.create("logged_user",$scope.username);
 	$state.go("app.home");
 	}else{
 	alert("Invalid login");

@@ -8,7 +8,7 @@ require "crossdomain.php";
 </ion-header-bar>
     <ion-content has-header="true" padding="true" ng-controller="HomeCtrl">
 	
-	 Welcome user!
+	 Welcome {{logged}}!
 	  </ion-content>
 <ion-footer-bar class="bar-positive">
 
