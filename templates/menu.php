@@ -8,6 +8,10 @@ require "crossdomain.php";
             <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-left"></i></ion-nav-back-button>
         </ion-nav-bar>
         <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+		  <ion-nav-buttons side="left">
+   <div class="navlogop1"><button menu-toggle="left" class="button button-icon icon ion-navicon"></button></div>
+  
+  </ion-nav-buttons>
     </ion-pane>
 
     <ion-side-menu side="left">
