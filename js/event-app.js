@@ -28,8 +28,21 @@ angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives',
     });
 
 })
-	.constant('baseurl', baseurl)
-	
+ .config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from our assets domain.  Notice the difference between * and **.
+    baseurl+"**",
+	  "http://192.168.1.68*"
+  ]);
+
+  // The blacklist overrides the whitelist so the open redirect here is blocked.
+  $sceDelegateProvider.resourceUrlBlacklist([
+   baseurl+"**"
+  ]);
+})
+ 
 	.config(function ($stateProvider, $urlRouterProvider) {
                  $stateProvider 
 				 .state('app', {
