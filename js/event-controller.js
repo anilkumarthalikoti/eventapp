@@ -51,15 +51,13 @@ angular.module("eventapp.controllers",[])
 		 params["username"]=user;
 		 params["userpwd"]=pwd;
 		 params["service"]="validate";
-		  
-		 $http({
-  method: 'POST',
-  url: baseurl+"response/validation.php",
-  data:params,
-    headers: {
-   'Content-Type': undefined
- }
- }).then(function validLogin(response) {
+		  var fd = new FormData();
+		  fd.append("data", JSON.stringify(params));
+		  var url=baseurl+"response/validation.php";
+		 $http.post(url,fd,{
+   transformRequest: angular.identity,
+                  headers: {'Content-Type': undefined}
+ }).success(function validLogin(response) {
  alert(response);
    if(response=="valid"){
    //Session.create("logged_user",$scope.username);
@@ -68,7 +66,7 @@ angular.module("eventapp.controllers",[])
 	alert("Invalid login");
 	}
 	
-  }, function errorCallback(response) {
+  }).error(function(response) {
 alert("Invalid credentals")
   });
  
