@@ -1,6 +1,12 @@
 <?php 
 require "crossdomain.php";
 ?>
+<style type="text/css">
+.item-content{
+padding:0;
+margin:0;
+}
+</style>
 <ion-view title="CREATE BUSINESS" hide-back-button="true"   hide-nav-bar="false">
 <ion-header-bar class="bar-positive">
    
@@ -12,7 +18,7 @@ require "crossdomain.php";
  
  
   <label class="item item-input">
-    <i class="icon ion-card"></i>
+    <i class="icon eventappadd"></i>
     <input type="text" placeholder="Business Name" name="businessName" ng-model="businessName">
   </label>
   <br/>
@@ -77,10 +83,11 @@ require "crossdomain.php";
             &nbsp;
            {{group.name}}
           </ion-item>
-          <ion-item class="item-accordion"
+          <ion-item  
                     ng-repeat="item in group.items"
-                    ng-show="isGroupShown(group)" >
-					<ion-checkbox  > {{item}}</ion-checkbox>
+                    ng-show="isGroupShown(group)"  style="margin:0px; padding:0">
+					<ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm" style="margin:0px;">{{item}}</ion-toggle>
+				 
            
           </ion-item>
         </div>
