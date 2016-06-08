@@ -51,12 +51,16 @@ angular.module("eventapp.controllers",[])
 		 params["username"]=user;
 		 params["userpwd"]=pwd;
 		 params["service"]="validate";
+		  
 		 $http({
   method: 'POST',
   url: baseurl+"response/validation.php",
-  data:params
-}).then(function validLogin(response) {
- 
+  data:params,
+    headers: {
+   'Content-Type': undefined
+ }
+ }).then(function validLogin(response) {
+ alert(response);
    if(response=="valid"){
    //Session.create("logged_user",$scope.username);
 	$state.go("app.home");

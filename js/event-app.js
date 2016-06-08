@@ -1,6 +1,7 @@
 var baseurl="http://192.168.0.101:9090/eventapp/";
 angular.module("eventapp",['ionic','ngCordova','ngRoute','eventapp.controllers','eventapp.directives','eventapp.service'])
-    .run(function ($ionicPlatform, $state) {
+    .run(function ($ionicPlatform, $state,$http) {
+ 
     $ionicPlatform.registerBackButtonAction(function (event) {
     if($state.current.name=="app.home"){
      // navigator.app.exitApp();
@@ -28,21 +29,7 @@ angular.module("eventapp",['ionic','ngCordova','ngRoute','eventapp.controllers',
     });
 
 })
- .config(function($sceDelegateProvider) {
-  $sceDelegateProvider.resourceUrlWhitelist([
-    // Allow same origin resource loads.
-    'self',
-    // Allow loading from our assets domain.  Notice the difference between * and **.
-    baseurl+"**",
-	  "http://192.168.1.68*",
-	    "http://192.168.0.100:3000/**"
-  ]);
-
-  // The blacklist overrides the whitelist so the open redirect here is blocked.
-  $sceDelegateProvider.resourceUrlBlacklist([
-   baseurl+"**"
-  ]);
-})
+ 
  
 	.config(function ($stateProvider, $urlRouterProvider) {
                  $stateProvider 

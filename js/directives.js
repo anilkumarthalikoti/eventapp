@@ -13,4 +13,19 @@ angular.module("eventapp.directives",[])
                   });
                }
             };
-         }]);
+         }])
+		 .factory('httpRequestInterceptor', function () {
+  return {
+    request: function (config) {
+ 
+      config.headers["Accept"]="*";
+	  config.headers["Content-Type"]="*";
+	 //config.headers["Access-Control-Request-Headers"]="*";
+
+      return config;
+    }
+  };
+});
+		 
+		 
+		 
