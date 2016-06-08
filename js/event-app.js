@@ -60,7 +60,15 @@ angular.module("eventapp",['ionic','eventapp.controllers','eventapp.directives',
                     }
                 }
             })
-			
+		.state('app.uploadtopackage', {
+                url: "/uploadtopackage",
+                views: {
+                    'menuContent': {
+                        templateUrl: baseurl+"templates/uploadtopackage.php",
+                        controller: "UploadtoPackageCtrl"
+                    }
+                }
+            })	
 			 .state('app.addbusiness', {
                 url: "/addbusiness",
                 views: {

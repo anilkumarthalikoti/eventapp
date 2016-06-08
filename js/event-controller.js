@@ -11,7 +11,7 @@ angular.module("eventapp.controllers",[])
         };
 
     })
-	 .controller('HomeCtrl', function($scope,fileUpload){
+	 .controller('UploadtoPackageCtrl', function($scope,fileUpload){
 	 $scope.baseurl=baseurl;
             $scope.uploadFile = function(){
                var imgfile = $scope.imagefile;
@@ -35,7 +35,7 @@ angular.module("eventapp.controllers",[])
 			
 			}
          })
- 
+ .controller('HomeCtrl', function ($scope, $state) {})
     .controller('LoginCtrl', function ($scope, $state) {
  $scope.username="";
  $scope.password="";
