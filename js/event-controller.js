@@ -67,8 +67,8 @@ angular.module("eventapp.controllers",[])
   }
 }).then(function(response) {
  var jdata=JSON.parse(JSON.stringify(response));
-  
-   if(jdata.data=="true"){
+ 
+   if(jdata.data){
   
    //Session.create("logged_user",$scope.username);
 	$state.go("app.home");
