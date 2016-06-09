@@ -2,11 +2,12 @@ angular.module("eventapp.service",[])
 .service('fileUpload', ['$http', function ($http) {
             this.uploadFileToUrl = function(file, uploadUrl,params){
 			 
-               
-               
+               var fd = new FormData();
+               var files=[];
 			   for (var i in file) {
-			   var fd = new FormData();
-			  	fd.append('file',file[i]);
+			   files.push(file[i]);
+			   }
+			  	fd.append('file',files);
 				$http.post(uploadUrl, fd, {
                   transformRequest: angular.identity,
                   headers: {'Content-Type': undefined}
@@ -18,7 +19,7 @@ angular.module("eventapp.service",[])
             
                .error(function(){
                });
-            }
+            
 		
 			//fd.append("data", JSON.stringify(params));
                

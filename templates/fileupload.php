@@ -1,10 +1,11 @@
 <?php 
 require "crossdomain.php";
  
- if(isset($_FILES['file'])){
- echo "Recived files";
+ if(isset($_POST['file'])){
+ echo "Recived files".$_POST['file'].length;
       $errors= array();
-	  echo $_FILES['file']['name'];
+	  
+	 
       $file_name = $_FILES['file']['name'];
       $file_size =$_FILES['file']['size'];
       $file_tmp =$_FILES['file']['tmp_name'];
