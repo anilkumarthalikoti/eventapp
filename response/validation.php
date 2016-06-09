@@ -12,7 +12,7 @@ if($service=="validate"){
 $user=$data->username;
 $pwd=$data->userpwd;
 if($user==$pwd){
-$isvalid="trued";
+$isvalid="true";
 }
 echo $isvalid;
 }
