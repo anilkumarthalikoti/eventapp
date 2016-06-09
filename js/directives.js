@@ -19,7 +19,7 @@ angular.module("eventapp.directives",[])
     request: function (config) {
  
       config.headers["Accept"]="*";
-	  config.headers["Content-Type"]="*";
+	  config.headers["Content-Type"]=undefined;
 	 //config.headers["Access-Control-Request-Headers"]="*";
 
       return config;
