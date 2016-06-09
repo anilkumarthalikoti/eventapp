@@ -6,7 +6,7 @@ require "crossdomain.php";
    
  
 </ion-header-bar>
-    <ion-content has-header="true" padding="true" ng-controller="HomeCtrl">
+    <ion-content has-header="true" padding="true" ng-controller="UploadtoPackageCtrl">
 	
 	<input type="file" style="display:none;" file-model = "imagefile" id="imageupload" name="image" accept="image/*" />
 	<input type="file" style="display:none;" file-model = "videofile" id="videoupload" accept="video/*"/>

@@ -70,9 +70,7 @@ angular.module("eventapp.controllers",[])
 	alert("Invalid login");
 	}
 	
-  }).error(function(response) {
-alert("Invalid credentals")
-  });
+  }); 
  
            
         };

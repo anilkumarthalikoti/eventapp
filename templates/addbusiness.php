@@ -18,7 +18,7 @@ margin:0;
  
  
   <label class="item item-input">
-    <i class="icon eventappadd"></i>
+    <i class="icon ion-card"></i>
     <input type="text" placeholder="Business Name" name="businessName" ng-model="businessName">
   </label>
   <br/>
