@@ -2,10 +2,13 @@ angular.module("eventapp.controllers",[])
  .controller('AppCtrl', function ($scope, $state) {
 
         $scope.logout = function () {
-         
+          
             $state.go('app.login');
         };
-
+		$scope.setView = function (view) {
+          view="app."+view;
+            $state.go(view);
+        };
         $scope.revokePermissions = function () {
              
         };
@@ -79,6 +82,7 @@ angular.module("eventapp.controllers",[])
 
     })
  .controller('NewBusinessCtrl', function ($scope, $state) {
+ 
  var food={name:"Foods",items:["Veg","Non-Veg","Gluten Food","Jain","Bar food"]};
  var drinks={name:"Drinks",items:["Drinks Allowed","Cock-Tail","Mock-Tail","Bar Area"]};
  var equipment={name:"Equipment",items:["Generator","Projector","Wifi","Microphone","Sound System"]};
