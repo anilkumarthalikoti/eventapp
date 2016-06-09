@@ -65,9 +65,10 @@ angular.module("eventapp.controllers",[])
   transformRequest: angular.identity,
   'Content-Type':undefined
   }
-}).then(function validLogin(response) {
- var isvalid=response;
-   if(isvalid){
+}).then(function(response) {
+ var isvalid=JSON.stringify(response);
+ alert(isvalid);
+   if(isvalid.data=="true"){
   
    //Session.create("logged_user",$scope.username);
 	$state.go("app.home");
