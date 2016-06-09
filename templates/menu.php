@@ -24,15 +24,16 @@ require "crossdomain.php";
         </header>
         <ion-content class="has-header">
             <ion-list>
-			<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/addbusiness">
+			<ion-item item-type="item-icon-left" nav-clear menu-close  ng-click="setView('addbusiness')">
                     <i class="icon ion-card"></i>
                     New Business
                 </ion-item>
-                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/uploadtopackage">
+                <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="setView('uploadtopackage')">
                     <i class="icon ion-information"></i>
 					
                     Package & Menu
                 </ion-item>
+				<!--
                 <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/share">
                     <i class="icon ion-share"></i>
                     Share
@@ -44,15 +45,17 @@ require "crossdomain.php";
                 <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/profile">
                     <i class="icon ion-person"></i>
                     Profile
-                </ion-item>
+                </ion-item>-->
                 <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="logout()">
                     <i class="icon ion-log-out"></i>
                     Logout
                 </ion-item>
+				
+				<!--
                 <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="revokePermissions()">
                     <i class="icon ion-unlocked"></i>
                     Revoke Permissions
-                </ion-item>
+                </ion-item>-->
             </ion-list>
         </ion-content>
     </ion-side-menu>
