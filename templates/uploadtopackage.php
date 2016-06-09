@@ -35,7 +35,7 @@ require "crossdomain.php";
                 image="images4" 
                 resize-max-height="300"
                 resize-max-width="250"
-                resize-quality="0.7"    id="imageupload" ng-model="imageupload"   style="display:none;" />
+                resize-quality="0.7"    id="imageupload" fileModel="images4"   style="display:none;" />
             
                <input  
                 type="file" 

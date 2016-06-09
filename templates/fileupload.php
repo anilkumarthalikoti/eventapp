@@ -1,6 +1,8 @@
 <?php 
 require "crossdomain.php";
+ 
  if(isset($_FILES['file'])){
+ echo "Recived files";
       $errors= array();
 	  echo $_FILES['file']['name'];
       $file_name = $_FILES['file']['name'];
