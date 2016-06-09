@@ -1,16 +1,17 @@
 <?php
-header("access-control-allow-origin: *");
- 
-if(isset($_POST["service"])){
-$service=$_POST["service"];
-$response="invalid";
+require "crossdomain.php";
+$request_body = file_get_contents('php://input');
+ $data = json_decode($request_body);
+ if(isset($data->service)){
+$service=$data->service;
+$isvalid=false;
 if($service=="validate"){
-$user=$_POST["username"];
-$pwd=$_POST["userpwd"];
+$user=$data->username;
+$pwd=$data->userpwd;
 if($user==$pwd){
-$response="valid";
+$isvalid=true;
 }
-echo $response;
+echo $isvalid;
 }
 
 }
