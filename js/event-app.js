@@ -1,6 +1,6 @@
 var baseurl="http://192.168.0.101:9090/eventapp/";
-angular.module("eventapp",['ionic','ngCordova','ngRoute','eventapp.controllers','eventapp.directives','eventapp.service','ngSession'])
-      .run(function ($ionicPlatform, $state,$http) {
+angular.module("eventapp",['ionic','ngCordova','ngRoute','eventapp.controllers','eventapp.directives','eventapp.service'])
+      .run(function ($ionicPlatform, $state,$http,$cookieStore) {
  
     $ionicPlatform.registerBackButtonAction(function (event) {
     if($state.current.name=="app.home"){

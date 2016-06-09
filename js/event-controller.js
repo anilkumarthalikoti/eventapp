@@ -41,10 +41,10 @@ angular.module("eventapp.controllers",[])
 			}
          })
  .controller('HomeCtrl', function ($scope, $state) {
- $scope.logged="";
+ $scope.logged=""
  
  })
-    .controller('LoginCtrl', function ($scope, $state,$http) {
+    .controller('LoginCtrl', function ($scope, $state,$http,$cookieStore) {
  $scope.username="";
  $scope.password="";
  
@@ -69,7 +69,7 @@ angular.module("eventapp.controllers",[])
  var jdata=JSON.parse(JSON.stringify(response));
  
    if(jdata.data){
-  
+ 
    //Session.create("logged_user",$scope.username);
 	$state.go("app.home");
 	}else{
