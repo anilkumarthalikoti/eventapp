@@ -8,8 +8,10 @@ require "crossdomain.php";
 </ion-header-bar>
     <ion-content has-header="true" padding="true" ng-controller="UploadtoPackageCtrl">
 	
+	   
+	<!--	
 	<input type="file" style="display:none;" file-model = "imagefile" id="imageupload" name="image" accept="image/*" />
-	<input type="file" style="display:none;" file-model = "videofile" id="videoupload" accept="video/*"/>
+	<input type="file" style="display:none;" file-model = "videofile" id="videoupload" accept="video/*"/>-->
 	<div class = "row">
 	<div class="col-50 text-center">
 	<div class="icon ion-camera"  ng-click="openimage()" style="font-size:128px;"></div>
@@ -23,14 +25,33 @@ require "crossdomain.php";
     
 	</div>
   </div>
+  <div> 
+            
+
+            <input  
+                type="file" 
+                accept="image/*" 
+                multiple
+                image="images4" 
+                resize-max-height="300"
+                resize-max-width="250"
+                resize-quality="0.7"  id="imageupload" name="image" style="display:none;" />
+            
+             
+           
+            
+        </div>
+	 
  <div class = "row">
 	<div class="col-50 text-center">
-     <div style="width:100%; height:250px; border:1px solid #cccccc"></div>
+     <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto;">
+	  <img ng-repeat="img in images4" ng-src="{{img.resized.dataURL}}" />
+	 </div>
  </div>
  <div class="col-50 text-center">
    <div style="width:100%; height:250px; border:1px solid #cccccc; "></div>
 	</div>
-  </div>
+  </div> 
   <div class = "row">
   <div class="col-100" style="height:25px; position:absolute; bottom:0px;">
 <button class="button button-large"  ng-click="uploadFile()">Upload</button>  </div>
