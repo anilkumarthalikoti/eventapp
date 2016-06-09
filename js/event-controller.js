@@ -13,12 +13,14 @@ angular.module("eventapp.controllers",[])
     })
 	 .controller('UploadtoPackageCtrl', function($scope,fileUpload){
 	 $scope.baseurl=baseurl;
+	  $scope.imagefile=[];
+	 $scope.videofile=[];
             $scope.uploadFile = function(){
-               var imgfile = $scope.imagefile;
-               var videofile = $scope.videofile;
+               var imgfile = $scope.images4;
+               var videofile = $scope.videos4;
                console.log('file is ' );
               // console.dir(file);
-               
+                
                var uploadUrl = $scope.baseurl+"templates/fileupload.php";
 			       fileUpload.uploadFileToUrl(imgfile, uploadUrl,{});
 				   uploadUrl = $scope.baseurl+"templates/videoupload.php";

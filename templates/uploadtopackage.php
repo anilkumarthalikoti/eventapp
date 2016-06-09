@@ -35,31 +35,29 @@ require "crossdomain.php";
                 image="images4" 
                 resize-max-height="300"
                 resize-max-width="250"
-                resize-quality="0.7" file-model = "imagefile"  id="imageupload" name="image" style="display:none;" />
+                resize-quality="0.7"    id="imageupload" ng-model="imageupload"   style="display:none;" />
             
                <input  
                 type="file" 
                 accept="video/*" 
                 multiple
-                image="images5" 
+                image="videos5" 
                 resize-max-height="300"
                 resize-max-width="250"
-                resize-quality="0.7" file-model = "videofile"  id="videoupload" name="video" style="display:none;" />
+                resize-quality="0.7"    id="videoupload" ng-model="videoupload"  style="display:none;" />
            
             
         </div>
 	 
  <div class = "row">
-	<div class="col-50 text-center">
-     <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto;">
+	<div class="col-50 text-center"  >
+     <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto; text-align:center;">
 	  <img ng-repeat="img in images4" ng-src="{{img.resized.dataURL}}" />
 	 </div>
  </div>
  <div class="col-50 text-center">
    <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto;">
-   <video autoplay="autoplay" preload="auto" ng-click="pauseOrPlay()" ng-repeat="img in images5">
- <source src="{{img.resized.dataURL}}" type="video/mp4" />
- </video>
+   
 	 
 	 </div>
   </div> 
@@ -67,7 +65,9 @@ require "crossdomain.php";
    <br/>
    <br/>
   <div class = "row">
+  
   <div class="col-100" style="height:25px; position:absolute; bottom:0px;">
+   
 <button class="button button-large"  ng-click="uploadFile()">Upload</button>  </div>
 </div>
 	  </ion-content>
