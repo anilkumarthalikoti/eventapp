@@ -51,7 +51,8 @@ require "crossdomain.php";
 	 
  <div class = "row">
 	<div class="col-50 text-center"  >
-     <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto; text-align:center;">
+     <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto; text-align:center;" >
+	 
 	  <img ng-repeat="img in images4" ng-src="{{img.resized.dataURL}}" />
 	 </div>
  </div>
