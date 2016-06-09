@@ -58,7 +58,7 @@ angular.module("eventapp.controllers",[])
   method: 'POST',
   url: baseurl+"response/validation.php",
   data:params,
-  headers:{
+   headers:{
   transformRequest: angular.identity,
   'Content-Type':undefined
   }
