@@ -40,7 +40,7 @@ require "crossdomain.php";
                 type="file" 
                 accept="video/*" 
              
-                id="videoupload" ng-model="videoupload" onchange="angular.element(this).scope().getFileDetails(this)"  style="display:none;"    multiple />
+                id="videoupload" ng-model="videoupload" onchange="angular.element(this).scope().getVideoDetails(this)"  style="display:none;"    multiple />
            
             
         </div>

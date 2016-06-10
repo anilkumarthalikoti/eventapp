@@ -22,7 +22,7 @@ angular.module("eventapp.controllers",[])
 	 $scope.baseurl=baseurl;
 	  $scope.imagefile=[];
 	 $scope.videofile=[];
-	 $scope.files = [];
+	
             $scope.uploadFile = function(){
                var imgfile = $scope.images4;
                var videofile = $scope.videos4;
@@ -40,13 +40,27 @@ angular.module("eventapp.controllers",[])
 			
 			// GET THE FILE INFORMATION.
         $scope.getFileDetails = function (e) {
-
+ $scope.files = [];
             
             $scope.$apply(function () {
 
                 // STORE THE FILE OBJECT IN AN ARRAY.
                 for (var i = 0; i < e.files.length; i++) {
                     $scope.files.push(e.files[i])
+                }
+
+            });
+        };
+		
+		
+		$scope.getVideoDetails = function (e) {
+ $scope.videos = [];
+            
+            $scope.$apply(function () {
+
+                // STORE THE FILE OBJECT IN AN ARRAY.
+                for (var i = 0; i < e.videos.length; i++) {
+                    $scope.videos.push(e.files[i])
                 }
 
             });
@@ -71,6 +85,29 @@ var transferfiles=[];
 
             // SEND FILE DETAILS TO THE API.
             objXhr.open("POST", baseurl+"templates/fileupload.php");
+            objXhr.send(data);
+			
+        }
+		
+		
+		$scope.uploadVideos = function () {
+
+            //FILL FormData WITH FILE DETAILS.
+			document.getElementById('pro').style.display="block";
+            var data = new FormData();
+var transferfiles=[];
+            for (var i in $scope.videos) {
+              
+			   data.append("file[]",$scope.videos[i] );
+            }
+ 
+            // ADD LISTENERS.
+            var objXhr = new XMLHttpRequest();
+            objXhr.addEventListener("progress", updateProgress, false);
+            objXhr.addEventListener("load", transferComplete, false);
+
+            // SEND FILE DETAILS TO THE API.
+            objXhr.open("POST", baseurl+"templates/videoupload.php");
             objXhr.send(data);
 			
         }
