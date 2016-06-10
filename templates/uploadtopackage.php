@@ -14,14 +14,14 @@ require "crossdomain.php";
 	<input type="file" style="display:none;" file-model = "videofile" id="videoupload" accept="video/*"/>-->
 	<div class = "row">
 	<div class="col-50 text-center">
-	<div class="icon ion-camera"  ng-click="openimage()" style="font-size:128px;"></div>
+	
 	<!--
      <img src="{{baseurl}}img/uploadimage.png" width="128" height="128" />
  -->
  </div>
  <div class="col-50 text-center">
 
- <div class="icon ion-videocamera"  ng-click="openvideos()" style="font-size:128px;"></div>
+
     
 	</div>
   </div>
@@ -44,8 +44,10 @@ require "crossdomain.php";
            
             
         </div>
-		<div style="width:100%;">
-		<div style="width:50%; height:250px; text-align:center; overflow:hidden;">
+		<div style="width:100%; ">
+		<div style="width:50%;   text-align:center; overflow:hidden; float:left ">
+		<div style="margin: auto 1.5em; display: inline-block;">
+		<div class="icon ion-camera"  ng-click="openimage()" style="font-size:128px;"></div>
 		<div style="width:250px; height:25px; overflow:auto; text-align:center; border:1px solid #CCCCCC; background:#CCCCCC">
 		Image selected
 		</div>
@@ -53,20 +55,35 @@ require "crossdomain.php";
 		
 		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
 		</div>
-		
+		<div style="width:250px;   text-align:center; border:1px solid #CCCCCC; background:#CCCCCC">
+	<button class="button button-large"  ng-click="uploadFiles()">Upload Images</button> 
 		</div>
-		<div style="width:50%; height:250px; text-align:center; overflow:hidden; ">
+		</div>
+		</div>
+		<!-- Column Second-->
+		<div style="width:50%;   text-align:center; overflow:hidden; float:left ">
+		<div style="margin: auto 1.5em; display: inline-block;">
+		 <div class="icon ion-videocamera"  ng-click="openvideos()" style="font-size:128px;"></div>
+		<div style="width:250px; height:25px; overflow:auto; text-align:center; border:1px solid #CCCCCC; background:#CCCCCC">
+		Video selected
+		</div>
 		<div style="width:250px; height:250px; overflow:auto; text-align:center; border:1px solid #CCCCCC">
+		
 		 
 		</div>
+		<div style="width:250px;   text-align:center; border:1px solid #CCCCCC; background:#CCCCCC">
+	<button class="button button-large"  ng-click="uploadVideos()">Upload Videos</button> 
 		</div>
+		</div>
+		</div>
+		
+		</div>
+		
+	 
 	 <p  ><progress id="pro" value="0" style="display:none;"></progress></p>
   
  
- <div style="width:100%; text-align:center">
-<button class="button button-large"  ng-click="uploadFiles()">Upload Images</button> 
-<button class="button button-large"  ng-click="uploadVideos()">Upload Videos</button> 
- </div>
+ 
 </div>
 	  </ion-content>
 <ion-footer-bar class="bar-positive">
