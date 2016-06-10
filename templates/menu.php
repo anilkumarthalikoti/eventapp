@@ -23,7 +23,7 @@ require "crossdomain.php";
             <h1 class="title">Event Manager</h1>
         </header>
         <ion-content class="has-header">
-            <ion-list>
+            <ion-list ng-show="serviceType == 'ADMIN'">
 			<ion-item item-type="item-icon-left" nav-clear menu-close  ng-click="setView('addbusiness')">
                     <i class="icon ion-card"></i>
                     New Business
@@ -50,6 +50,36 @@ require "crossdomain.php";
                     <i class="icon ion-log-out"></i>
                     Logout
                 </ion-item>
+				
+				<!--
+                <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="revokePermissions()">
+                    <i class="icon ion-unlocked"></i>
+                    Revoke Permissions
+                </ion-item>-->
+            </ion-list>
+			<ion-list ng-show="serviceType == 'NA'">
+			<ion-item item-type="item-icon-left" nav-clear menu-close  ng-click="setView('signup')">
+                    <i class="icon ion-edit"></i>
+                    SIGN UP
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="setView('viewpackage')">
+                    <i class="icon ion-search"></i>
+					Find Packages
+                </ion-item>
+				<!--
+                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/share">
+                    <i class="icon ion-share"></i>
+                    Share
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/person/me/friends">
+                    <i class="icon ion-ios7-people"></i>
+                    Friends
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/profile">
+                    <i class="icon ion-person"></i>
+                    Profile
+                </ion-item>-->
+               
 				
 				<!--
                 <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="revokePermissions()">

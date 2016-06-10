@@ -24,4 +24,17 @@ angular.module("eventapp.service",[])
 			//fd.append("data", JSON.stringify(params));
                
             }
-         }]);
+         }])
+.service("prop",['$rootScope',function($rootScope){
+$rootScope.prop=[];
+$rootScope.prop["fotter"]="Designed & developed by";
+
+$rootScope.get=function(key){
+
+return $rootScope.prop[key];
+}
+$rootScope.set=function(key,value){
+
+ $rootScope.prop[key]=value;
+}
+}]);

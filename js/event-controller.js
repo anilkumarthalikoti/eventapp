@@ -1,8 +1,12 @@
 angular.module("eventapp.controllers",[])
  .controller('AppCtrl', function ($scope, $state) {
-
+  $scope.serviceType="NA";
+  if(!(sessionStorage['authtype']==undefined)){
+  
+  $scope.serviceType=sessionStorage['authtype'].toString();
+  }
         $scope.logout = function () {
-          
+          sessionStorage.clear();
             $state.go('app.login');
         };
 		$scope.setView = function (view) {
@@ -41,12 +45,18 @@ angular.module("eventapp.controllers",[])
 			}
          })
  .controller('HomeCtrl', function ($scope, $state) {
- $scope.logged=""
+ $scope.logged=sessionStorage['userid'].toString();
+
+ 
+ 
  
  })
-    .controller('LoginCtrl', function ($scope, $state,$http,$cookieStore) {
+    .controller('LoginCtrl', function ($scope, $state,$http,$rootScope) {
+	sessionStorage.clear();
+	$scope.serviceType="";
  $scope.username="";
  $scope.password="";
+ $scope.usertype="";
  
  
         $scope.doLogin = function () {
@@ -68,10 +78,12 @@ angular.module("eventapp.controllers",[])
 }).then(function(response) {
  var jdata=JSON.parse(JSON.stringify(response));
  
-   if(jdata.data){
+   if(jdata.data=="true"){
+ $scope.usertype="ADMIN";
+   sessionStorage['userid']=$scope.username;
+   sessionStorage['authtype']=$scope.usertype;
  
-   //Session.create("logged_user",$scope.username);
-	$state.go("app.home");
+	$state.go("app.home", {}, { reload: true });
 	}else{
 	alert("Invalid login");
 	}
