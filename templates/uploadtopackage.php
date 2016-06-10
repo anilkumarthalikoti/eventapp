@@ -46,12 +46,19 @@ require "crossdomain.php";
         </div>
 		<div style="width:100%;">
 		<div style="width:50%; height:250px; text-align:center; overflow:hidden;">
+		<div style="width:250px; height:25px; overflow:auto; text-align:center; border:1px solid #CCCCCC; background:#CCCCCC">
+		Image selected
+		</div>
 		<div style="width:250px; height:250px; overflow:auto; text-align:center; border:1px solid #CCCCCC">
+		
 		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
 		</div>
 		
 		</div>
-		<div style="width:50% text-align:center"></div>
+		<div style="width:50%; height:250px; text-align:center; overflow:hidden; ">
+		<div style="width:250px; height:250px; overflow:auto; text-align:center; border:1px solid #CCCCCC">
+		 
+		</div>
 		</div>
 	 <p  ><progress id="pro" value="0" style="display:none;"></progress></p>
   
