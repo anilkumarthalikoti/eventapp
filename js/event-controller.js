@@ -78,7 +78,7 @@ angular.module("eventapp.controllers",[])
 }).then(function(response) {
  var jdata=JSON.parse(JSON.stringify(response));
  
-   if(jdata.data=="true"){
+   if(jdata.data.indexOf("true")!=-1){
  $scope.usertype="ADMIN";
    sessionStorage['userid']=$scope.username;
    sessionStorage['authtype']=$scope.usertype;
