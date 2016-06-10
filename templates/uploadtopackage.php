@@ -31,45 +31,35 @@ require "crossdomain.php";
             <input  
                 type="file" 
                 accept="image/*" 
-                multiple
-                image="images4" 
-                resize-max-height="300"
-                resize-max-width="250"
-                resize-quality="0.7"    id="imageupload" fileModel="images4"   style="display:none;" />
+					image="images"
+                 id="imageupload"  resize-max-height="300"
+    resize-max-width="250"
+    resize-quality="0.7" ng-model="imageupload"  onchange="angular.element(this).scope().getFileDetails(this)"   style="display:none;"  multiple />
             
                <input  
                 type="file" 
                 accept="video/*" 
-                multiple
-                image="videos5" 
-                resize-max-height="300"
-                resize-max-width="250"
-                resize-quality="0.7"    id="videoupload" ng-model="videoupload"  style="display:none;" />
+             
+                id="videoupload" ng-model="videoupload" onchange="angular.element(this).scope().getFileDetails(this)"  style="display:none;"    multiple />
            
             
         </div>
-	 
- <div class = "row" style="text-align: center" >
-	<div class="col-50 text-center" style="text-align: center" >
-     <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto; text-align:center;" >
-	 
-	  <img ng-repeat="img in images4" ng-src="{{img.resized.dataURL}}" />
-	 </div>
- </div>
- <div class="col-50 text-center">
-   <div style="width:280px; height:200px; border:1px solid #cccccc; overflow:auto;">
-   
-	 
-	 </div>
-  </div> 
-  </div>
-   <br/>
-   <br/>
-  <div class = "row">
+		<div style="width:100%;">
+		<div style="width:50%; height:250px; text-align:center; overflow:hidden;">
+		<div style="width:250px; height:250px; overflow:auto; text-align:center; border:1px solid #CCCCCC">
+		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
+		</div>
+		
+		</div>
+		<div style="width:50% text-align:center"></div>
+		</div>
+	 <p  ><progress id="pro" value="0" style="display:none;"></progress></p>
   
-  <div class="col-100" style="height:25px; position:absolute; bottom:0px;">
-   
-<button class="button button-large"  ng-click="uploadFile()">Upload</button>  </div>
+ 
+ <div style="width:100%; text-align:center">
+<button class="button button-large"  ng-click="uploadFiles()">Upload Images</button> 
+<button class="button button-large"  ng-click="uploadVideos()">Upload Videos</button> 
+ </div>
 </div>
 	  </ion-content>
 <ion-footer-bar class="bar-positive">
